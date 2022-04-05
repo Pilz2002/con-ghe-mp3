@@ -1,0 +1,121 @@
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    border-bottom: 1px solid hsla(0,0%,100%,0.05);
+}
+
+.flex-col {
+    flex-direction: column;
+    position: relative;
+}
+
+.flex-every {
+    justify-content: space-between;
+}
+
+.middle {
+    margin: auto 0;
+}
+
+.f-12 {
+    font-size: 12px;
+    color: hsla(0,0%,100%,0.5);
+}
+
+.f-54 {
+    font-size: 54px;
+}
+
+
+
+.pd-10 {
+    padding: 10px;
+}
+
+.input-style {
+    width: 350px;
+    height: 22px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 4px 8px;
+    outline: none;
+}
+
+body {
+    background-color: #170F23;
+    color: #fff;
+}
+
+.App {
+    margin: 16px 32px;
+}
+
+.song {
+    flex: 2;
+}
+
+.album {
+    flex: 2.9;
+}
+
+.card-info {
+    flex: 2;
+}
+
+.album-info {
+    flex: 3;
+    line-height: 60px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.album-info {
+    p {
+        font-size: 12px;
+        color: hsla(0,0%,100%,0.5);
+    }
+}
+
+.img-artist {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.times {
+    line-height: 60px;
+}
+
+
+
+button {
+    padding:8px 13px 8px 13px;
+    border-radius:5px;
+}
+
+button:hover {
+   opacity: 0.9;
+   cursor: pointer;
+}
+
+.btn-Del{
+   background-color: Red;
+   color: #fff;
+   font-weight: bold;
+   font-size: 12px;
+}
+
+.btn-Edit{
+    background-color: green;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+ }

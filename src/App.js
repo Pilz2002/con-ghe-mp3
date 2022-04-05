@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Title from './components/Title';
+import './App.scss';
+import  ItemComponent  from './components/ItemComponent'
+import DB from './db'
+import { useState, useEffect } from 'react'
+import ButtonG from "./components/ButtonG"
 function App() {
+  const [input, setInput] = useState('')
+  const [datas, setDatas] = useState(() => DB())
+  const inputAppCB = (data) => {
+    setInput(data)
+  }
+  const appCallBack = (data) => {
+    const newDatas = [...data]
+    setDatas(newDatas)
+  }
+  useEffect(() => {
+    const newDatas = datas.sort((a,b)=>b.duration-a.duration)
+    appCallBack(newDatas)
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='flex flex-every'>
+        <h1 className="f-54">Mới phát hành</h1>
+        <ButtonG 
+          input={input}
+          inputAppCB={inputAppCB}
+          datas={datas}
+          appCallBack = {appCallBack}
+        />
+      </div>
+      <Title />
+      {datas.map((data, index) => 
+        <div key = {index}>
+          <ItemComponent 
+            props = {data}
+            datas = {datas}
+            
+          />
+        </div>
+
+      )}
     </div>
   );
 }
